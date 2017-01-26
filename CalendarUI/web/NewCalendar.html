@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Calendar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='fullcalendar.css' rel='stylesheet' />
+        <link href='fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='moment.min.js'></script>
+        <script src='jquery.min.js'></script>
+        <script src='fullcalendar.min.js'></script>
+        <script>
+            $(document).ready(function() {
+            $('#calendar').fullCalendar({
+
+            <!--Header Section Including Previous,Next and Today-->
+            header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,basicWeek,basicDay'
+            },
+
+            <!--Default Date-->
+            defaultDate: '2015-02-12',
+            editable: true,
+            
+            <!--Event Section-->
+            eventLimit: true, // allow "more" link when too many events
+            events: [
+            
+            {
+            title: 'GDP1',
+            start: '2015-02-12T20:00:00'
+            },
+            {
+            title: 'GDP2',
+            start: '2015-02-13T07:00:00'
+            },
+            {
+            title: 'JAVA',
+            start: '2015-02-28T08:12:00'
+            },
+            {
+            title: 'Web App',
+            start: '2015-02-12T09:13:00'
+            }
+            ]
+            });
+            });
+        </script>
+        <!--Styling for calendar-->
+        <style>
+            body {
+            margin: 40px 10px;
+            padding: 0;
+            font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+            font-size: 14px;
+            }
+            #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='calendar'></div>
+    </body>
+</html>
